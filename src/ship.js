@@ -36,14 +36,37 @@ class Ship {
   }
 
   updatePart(part) {
-    //STOPPING POINT
-    // if (this.parts[part.type]) {
-    //   this.parts = {...this.parts, [part.type]: part}
-
-  // }
     if (part.type != undefined) {
+      if (this.parts[part.type]) {
+        var oldValue = this.parts[part.type].value
+      }
       this.parts = {...this.parts, [part.type]: part}
+      return oldValue - part.value
     }
+  }
+
+  checkReadiness() {
+    var status = {
+      readyToFly: this.isReadyToFly(),
+      notes: 'Good to go!'
+    }
+    if (Object.keys(this.parts).length === 0) {
+      status.notes = 'Cannot fly without all parts'
+    }
+    if (!this.fuel) {
+      status.notes = 'Cannot fly without fuel'
+    }
+    if (!this.captain) {
+      status.notes = 'Cannot fly without a captain'
+    }
+    // if (readyToFly?()) {
+    //   status.readyToFly: true
+    // }
+    return status
+  }
+
+  isReadyToFly() {
+    return Boolean(this.captain && this.fuel && Object.keys(this.parts).length)
   }
 }
 

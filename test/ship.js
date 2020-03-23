@@ -361,7 +361,7 @@ describe('Ship', function() {
     assert.equal(difference, -1000);
   })
 
-  it.skip('can replace another existing part, returning the diff in value', function() {
+  it('can replace another existing part, returning the diff in value', function() {
     var parts = {
       shell: new Part({ name: 'XC-Wing', type: 'shell', value: 8000 }),
       computer: new Part({ name: 'Starmapper', type: 'computer', value: 300 }),
@@ -383,7 +383,7 @@ describe('Ship', function() {
     assert.equal(difference, 2500);
   })
 
-  it.skip('cannot fly without a captain', function() {
+  it('cannot fly without a captain', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -399,7 +399,7 @@ describe('Ship', function() {
     assert.equal(status.notes, 'Cannot fly without a captain');
   })
 
-  it.skip('cannot fly without fuel', function() {
+  it('cannot fly without fuel', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       {
@@ -417,7 +417,7 @@ describe('Ship', function() {
     assert.equal(status.notes, 'Cannot fly without fuel');
   })
 
-  it.skip('cannot fly without all parts', function() {
+  it('cannot fly without all parts', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       {
@@ -435,7 +435,7 @@ describe('Ship', function() {
     assert.equal(status.notes, 'Cannot fly without all parts');
   })
 
-  it.skip('can fly', function() {
+  it('can fly', function() {
     var captain = new Being('Will', 'human');
     var parts = {
       shell: new Part({name: 'S-1', type: 'shell', value: 200}),
