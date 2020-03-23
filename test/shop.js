@@ -127,15 +127,15 @@ describe('Shop', function() {
     assert.equal(result, "you require 100 more credits to make this purchase")
   })
 
-  it('can outfit a ship, and charge the captian', function() {
-    var captian = new Being('Will', 'human');
-    captian.credits = 1000
+  it('can outfit a ship, and charge the captain', function() {
+    var captain = new Being('Will', 'human');
+    captain.credits = 1000
 
     var fighter = new Ship(
       {
         name: 'Atlantis',
         type: 'military',
-        captian: captian,
+        captain: captain,
         maxCrew: 2,
         odometer: 3340,
       }
@@ -146,7 +146,7 @@ describe('Shop', function() {
     newShop.addInventory(shell)
     var result = newShop.outfitShip(fighter, 'shell')
 
-    assert.equal(captian.credits, 800)
+    assert.equal(captain.credits, 800)
     assert.equal(fighter.parts.shell, shell)
     assert.isUndefined(newShop.inventory.shell)
     assert.equal(result, `shell added to ship`)
