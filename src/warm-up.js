@@ -1,7 +1,7 @@
 // Read the instructions for each of the warm up exercises carefully. This may
 // seem repititious or pedandtic at first, however it's very important that you
 // become comfortable with these fundamental concepts. Do not move on to
-// iteration 1 until you are confident that you've completed all of iteration 0.
+// iteration 1 until you are confident that you've completed all of iteration 0..
 
 
 //------------------------- Variables -------------------------//
